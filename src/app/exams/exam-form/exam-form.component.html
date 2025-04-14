@@ -1,0 +1,23 @@
+<div class="container">
+    <h2>{{ isEditMode ? 'İmtahanı redaktə et' : 'Yeni imtahan əlavə et' }}</h2>
+  
+    <form (ngSubmit)="onSubmit()">
+      <label>Dərs kodu:</label>
+      <input type="text" [(ngModel)]="exam.lessonCode" name="lessonCode" required />
+  
+      <label>Şagird nömrəsi:</label>
+      <input type="number" [(ngModel)]="exam.studentNumber" name="studentNumber" required />
+  
+      <label>İmtahan tarixi:</label>
+      <input type="date" [(ngModel)]="exam.date" name="date" required />
+  
+      <label>Qiymət:</label>
+      <input type="number" [(ngModel)]="exam.grade" name="grade" min="1" max="5" required />
+  
+      <div class="buttons">
+        <button type="submit">{{ isEditMode ? 'Yadda saxla' : 'Əlavə et' }}</button>
+        <button type="button" (click)="onCancel()">Ləğv et</button>
+      </div>
+    </form>
+  </div>
+  

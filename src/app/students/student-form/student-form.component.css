@@ -1,0 +1,26 @@
+.container {
+    padding: 20px;
+    max-width: 500px;
+}
+
+.container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.container form label {
+    margin-top: 10px;
+}
+
+.container form input {
+    padding: 5px;
+    margin-top: 5px;
+}
+
+.container form .buttons {
+    margin-top: 15px;
+}
+
+.container form button {
+    margin-right: 10px;
+}

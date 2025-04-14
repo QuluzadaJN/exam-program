@@ -1,0 +1,30 @@
+<div class="container">
+    <a routerLink="/" routerLinkActive="active">🏠 Əsas səhifə</a>
+
+    <h2>Dersler siyahisi</h2>
+    <button (click)="onCreate()">+ Yeni ders elave et</button>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Kod</th>
+                <th>Ad</th>
+                <th>Sinif</th>
+                <th>Muellim</th>
+                <th>Emeliyyatler</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let lesson of lessons">
+                <td>{{lesson.code}}</td>
+                <td>{{lesson.name}}</td>
+                <td>{{lesson.class}}</td>
+                <td>{{lesson.teacherName}} {{lesson.teacherSurname}}</td>
+                <td>
+                    <button (click)="onEdit(lesson.code)">Redakte et</button>
+                    <button (click)="onDelete(lesson.code)">Sil</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,28 @@
+<div class="container">
+    <a routerLink="/" routerLinkActive="active">🏠 Əsas səhifə</a>
+
+    <h2>Telebelerin siyahisi</h2>
+    <button (click)="onCreate()">+ Yeni telebe elave et</button>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nomre</th>
+                <th>Telebe</th>
+                <th>Sinif</th>
+                <th>Emeliyyatler</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let student of students">
+                <td>{{student.id}}</td>
+                <td>{{student.name}} {{student.surname}}</td>
+                <td>{{student.class}}</td>
+                <td>
+                    <button (click)="onEdit(student.id)">Redakte et</button>
+                    <button (click)="onDelete(student.id)">Sil</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

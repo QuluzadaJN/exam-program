@@ -1,0 +1,25 @@
+<div class="container">
+    <h2>{{ isEditMode ? 'Dersi redakte et' : 'Yeni ders elave et' }}</h2>
+
+    <form (ngSubmit)="onSubmit()">
+        <label>Kod:</label>
+        <input type="text" [(ngModel)]="lesson.code" name="code" required />
+
+        <label>Ad:</label>
+        <input type="text" [(ngModel)]="lesson.name" name="name" required />
+
+        <label>Sinif:</label>
+        <input type="number" [(ngModel)]="lesson.class" name="class" required />
+
+        <label>Müəllimin adı:</label>
+        <input type="text" [(ngModel)]="lesson.teacherName" name="teacherName" required />
+
+        <label>Müəllimin soyadı:</label>
+        <input type="text" [(ngModel)]="lesson.teacherSurname" name="teacherSurname" required />
+
+        <div class="buttons">
+            <button type="submit">{{ isEditMode ? 'Yadda saxla' : 'Elave et' }}</button>
+            <button type="button" (click)="onCancel()">Legv et</button>
+        </div>
+    </form>
+</div>

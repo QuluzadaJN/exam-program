@@ -1,0 +1,31 @@
+<div class="container">
+
+  <a routerLink="/"  routerLinkActive="active">🏠 Əsas səhifə</a>
+
+  <h2>İmtahanlar</h2>
+  <button (click)="onCreate()">+ Yeni imtahan</button>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Dərs</th>
+        <th>Şagird</th>
+        <th>Tarix</th>
+        <th>Qiymət</th>
+        <th>Əməliyyatlar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let exam of exams">
+        <td>{{ exam.lessonCode }}</td>
+        <td>{{ exam.studentNumber }}</td>
+        <td>{{ exam.date }}</td>
+        <td>{{ exam.grade }}</td>
+        <td>
+          <button (click)="onEdit(exam)">Redaktə et</button>
+          <button (click)="onDelete(exam)">Sil</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
